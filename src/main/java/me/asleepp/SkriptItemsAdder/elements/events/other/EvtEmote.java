@@ -33,10 +33,10 @@ public class EvtEmote extends SkriptEvent {
         this.integer = matchedPattern;
         this.id = (Literal<String>) args[0];
         if (parseResult.hasTag("stop")) {
-            cause = PlayerEmoteEndEvent.Cause.STOP;
+            cause = PlayerEmoteEndEvent.Cause.valueOf("STOP");
             checkCause = true;
         } else if (parseResult.hasTag("finish")) {
-            cause = PlayerEmoteEndEvent.Cause.FINISHED;
+            cause = PlayerEmoteEndEvent.Cause.valueOf("FINISHED");
             checkCause = true;
         } else {
             checkCause = false;

@@ -56,7 +56,7 @@ tasks {
 
     withType<JavaCompile> {
         options.encoding = Charsets.UTF_8.name()
-        options.release = 17
+        options.release = 21
     }
 
     withType<Javadoc>() {
@@ -80,8 +80,8 @@ tasks {
     // 1.17           = Java 16
     // 1.18 - 1.20.4  = Java 17
     // 1-20.5+        = Java 21
-    val version = "1.20.4"
-    val javaVersion = JavaLanguageVersion.of(17)
+    val version = "1.21.8"
+    val javaVersion = JavaLanguageVersion.of(21)
 
     val jvmArgsExternal = listOf(
         "-Dcom.mojang.eula.agree=true"
@@ -96,10 +96,10 @@ tasks {
         }
 
         downloadPlugins {
-            url("https://download.luckperms.net/1552/bukkit/loader/LuckPerms-Bukkit-5.4.137.jar")
-            url("https://github.com/SkriptLang/Skript/releases/download/2.9.1/Skript-2.9.1.jar")
-            url("https://github.com/dmulloy2/ProtocolLib/releases/download/5.2.0/ProtocolLib.jar")
-            url("https://github.com/LoneDev6/SpigotUtilities/raw/master/LoneLibs.jar")
+            url("https://download.luckperms.net/1664/bukkit/loader/LuckPerms-Bukkit-5.5.77.jar")
+            url("https://github.com/SkriptLang/Skript/releases/download/2.16.1/Skript-2.16.1.jar")
+            url("https://github.com/dmulloy2/ProtocolLib/releases/download/5.4.0/ProtocolLib.jar")
+            url("https://github.com/JavaPlugins/LoneLibs/releases/download/1.0.65/LoneLibs_1.0.65.jar")
         }
 
         jvmArgs = jvmArgsExternal

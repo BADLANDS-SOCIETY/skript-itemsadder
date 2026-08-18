@@ -1,5 +1,6 @@
 package me.asleepp.SkriptItemsAdder.listeners;
 
+import dev.lone.itemsadder.api.Events.ItemsAdderFirstLoadEvent;
 import dev.lone.itemsadder.api.Events.ItemsAdderLoadDataEvent;
 import me.asleepp.SkriptItemsAdder.SkriptItemsAdder;
 import me.asleepp.SkriptItemsAdder.aliases.AliasesGenerator;
@@ -19,8 +20,15 @@ public class ItemsAdderEventListener implements Listener {
     @EventHandler
     public void onItemsAdderLoadData(ItemsAdderLoadDataEvent event) {
         // run alias generation async
+        //generateAliases();
+    }
+
+    @EventHandler
+    public void onItemsLoad(ItemsAdderFirstLoadEvent event) {
         generateAliases();
     }
+
+
 
     public void generateAliases() {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
